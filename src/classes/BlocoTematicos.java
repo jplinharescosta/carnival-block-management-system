@@ -1,9 +1,9 @@
 package classes;
 
-public class BlocosTematicos extends Bloco {
+public class BlocoTematicos extends Bloco {
     private String paradeTheme;
 
-    public BlocosTematicos(String date, String hour, String musicStyle, String name, String neighborhood, int numPartygoersLastYear, String paradeTheme) {
+    public BlocoTematicos(String date, String hour, String musicStyle, String name, String neighborhood, int numPartygoersLastYear, String paradeTheme) {
         super(date, hour, musicStyle, name, neighborhood, numPartygoersLastYear);
         this.paradeTheme = paradeTheme;
     }
