@@ -1,21 +1,26 @@
-
 package classes;
 
 public class BlocoTradicional extends Bloco {
-    private int yearsOfExistence;
 
-    public BlocoTradicional(String date, String hour, String musicStyle, String name, String neighborhood, int numPartygoersLastYear, int yearsOfExistence) {
-        super(date, hour, musicStyle, name, neighborhood, numPartygoersLastYear);
-        this.yearsOfExistence = yearsOfExistence;
-    }
+  private int yearsOfExistence;
 
-    public int getYearsOfExistence() {
-        return yearsOfExistence;
-    }
+  public BlocoTradicional(
+    String name,
+    String musicStyle,
+    String neighborhood,
+    String dateHour,
+    int numPartygoersLastYear,
+    int yearsOfExistence
+  ) {
+    super(name, musicStyle, neighborhood, dateHour, numPartygoersLastYear);
+    this.yearsOfExistence = yearsOfExistence;
+  }
 
-    public void setYearsOfExistence(int yearsOfExistence) {
-        this.yearsOfExistence = yearsOfExistence;
-    }
+  public int getYearsOfExistence() {
+    return yearsOfExistence;
+  }
 
-
+  public void setYearsOfExistence(int yearsOfExistence) {
+    this.yearsOfExistence = yearsOfExistence;
+  }
 }

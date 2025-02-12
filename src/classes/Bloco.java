@@ -1,67 +1,70 @@
 package classes;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public abstract class Bloco {
-    private String name;
-    private String musicStyle;
-    private String neighborhood;
-    private String date;
-    private String hour;
-    private int numPartygoersLastYear;
 
-    public Bloco(String date, String hour, String musicStyle, String name, String neighborhood, int numPartygoersLastYear) {
-        this.date = date;
-        this.hour = hour;
-        this.musicStyle = musicStyle;
-        this.name = name;
-        this.neighborhood = neighborhood;
-        this.numPartygoersLastYear = numPartygoersLastYear;
-    }
+  private String name;
+  private String musicStyle;
+  private String neighborhood;
+  private LocalDateTime dateHour;
+  private int numPartygoersLastYear;
 
-    public String getName() {
-        return name;
-    }
+  private static final DateTimeFormatter FORMATTER =
+    DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"); //Conversor de horario(String) para LocalDateTime
 
-    public void setName(String name) {
-        this.name = name;
-    }
+  public Bloco(
+    String name,
+    String musicStyle,
+    String neighborhood,
+    String dateHour,
+    int numPartygoersLastYear
+  ) {
+    this.name = name;
+    this.musicStyle = musicStyle;
+    this.neighborhood = neighborhood;
+    this.dateHour = LocalDateTime.parse(dateHour, FORMATTER); // Aqui estou convertendo o horario(dd/MM/yyyy HH:mm:ss) passado em String para LocalDateTime.
+    this.numPartygoersLastYear = numPartygoersLastYear;
+  }
 
-    public String getMusicStyle() {
-        return musicStyle;
-    }
+  public String getName() {
+    return name;
+  }
 
-    public void setMusicStyle(String musicStyle) {
-        this.musicStyle = musicStyle;
-    }
+  public void setName(String name) {
+    this.name = name;
+  }
 
-    public String getNeighborhood() {
-        return neighborhood;
-    }
+  public String getMusicStyle() {
+    return musicStyle;
+  }
 
-    public void setNeighborhood(String neighborhood) {
-        this.neighborhood = neighborhood;
-    }
+  public void setMusicStyle(String musicStyle) {
+    this.musicStyle = musicStyle;
+  }
 
-    public String getDate() {
-        return date;
-    }
+  public String getNeighborhood() {
+    return neighborhood;
+  }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
+  public void setNeighborhood(String neighborhood) {
+    this.neighborhood = neighborhood;
+  }
 
-    public String getHour() {
-        return hour;
-    }
+  public LocalDateTime getDateHour() {
+    return dateHour;
+  }
 
-    public void setHour(String hour) {
-        this.hour = hour;
-    }
+  public void setDateHour(LocalDateTime dateHour) {
+    this.dateHour = dateHour;
+  }
 
-    public int getNumPartygoersLastYear() {
-        return numPartygoersLastYear;
-    }
+  public int getNumPartygoersLastYear() {
+    return numPartygoersLastYear;
+  }
 
-    public void setNumPartygoersLastYear(int numPartygoersLastYear) {
-        this.numPartygoersLastYear = numPartygoersLastYear;
-    }
+  public void setNumPartygoersLastYear(int numPartygoersLastYear) {
+    this.numPartygoersLastYear = numPartygoersLastYear;
+  }
 }
