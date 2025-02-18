@@ -84,11 +84,21 @@ public class AgendaDeBlocos {
   }
 
   public void registerBlock(Bloco newBlock) {
+    DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern(
+      "dd/MM/yyyy HH:mm:ss"
+    );
+
     if (verifyConflicts(newBlock)) {
-      System.out.println("Conflito detectado! Sugerindo novo horário...");
+      System.out.println(
+        "Conflito no " +
+        newBlock.getName() +
+        " detectado! Sugerindo novo horário..."
+      );
       LocalDateTime newDateHour = sugestNewHour(newBlock);
       newBlock.setDateHour(newDateHour);
-      System.out.println("Novo horário sugerido: " + newDateHour);
+      System.out.println(
+        "Novo horário sugerido: " + newDateHour.format(FORMATTER)
+      );
     }
     blocks.add(newBlock);
     System.out.println("Bloco cadastrado com sucesso: " + newBlock.getName());
