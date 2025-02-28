@@ -1,3 +1,4 @@
+import static classes.Bloco.blockSchedule;
 import static classes.Bloco.calculateEstimateTotalInCarnaval;
 import static classes.Bloco.listEstimatePublic;
 
@@ -14,7 +15,7 @@ public class App {
       "Copacabana",
       "15/02/2025 20:00:00",
       100,
-      "Hallow"
+      "Halloween"
     );
 
     BlocoTradicional blocoTrad = new BlocoTradicional(
@@ -47,7 +48,10 @@ public class App {
     );
 
     foliao1.reviewBlock(BlocoI, 5);
+    foliao1.reviewBlock(blocoTrad, 3);
+    foliao1.reviewBlock(blocoT, 4);
 
+    foliao1.favoriteBlock(BlocoI);
     foliao1.favoriteBlock(BlocoI);
 
     foliao1.recommendBlocks(agenda.getBlocks());
@@ -55,5 +59,7 @@ public class App {
     listEstimatePublic(agenda.getBlocks());
 
     calculateEstimateTotalInCarnaval(agenda.getBlocks());
+
+    blockSchedule(agenda.getBlocks());
   }
 }

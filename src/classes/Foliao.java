@@ -7,18 +7,18 @@ import java.util.List;
 public class Foliao {
 
   private String name;
-  private int idade;
+  private int age;
   private String musicStylePrefer;
   private String intrestRegion;
 
   public Foliao(
     String name,
-    int idade,
+    int age,
     String musicStylePrefer,
     String intrestRegion
   ) {
     this.name = name;
-    this.idade = idade;
+    this.age = age;
     this.musicStylePrefer = musicStylePrefer;
     this.intrestRegion = intrestRegion;
   }
@@ -30,7 +30,12 @@ public class Foliao {
   public void reviewBlock(Bloco bloco, int note) {
     if (note >= 1 && note <= 5) {
       System.out.println(
-        name + ", sua nota [" + note + "] foi computada com sucesso."
+        name +
+        ", sua nota [" +
+        note +
+        "] para o bloco " +
+        bloco.getName() +
+        " foi computado com sucesso."
       );
       bloco.setReview(note);
     } else {
@@ -47,11 +52,11 @@ public class Foliao {
   }
 
   public int getIdade() {
-    return idade;
+    return age;
   }
 
   public void setIdade(int idade) {
-    this.idade = idade;
+    this.age = idade;
   }
 
   public String getIntrestRegion() {

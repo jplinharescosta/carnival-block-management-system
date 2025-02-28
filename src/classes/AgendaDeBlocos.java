@@ -90,7 +90,7 @@ public class AgendaDeBlocos {
 
     if (verifyConflicts(newBlock)) {
       System.out.println(
-        "Conflito no " +
+        "Conflito de horário no bloco: " +
         newBlock.getName() +
         " detectado! Sugerindo novo horário..."
       );

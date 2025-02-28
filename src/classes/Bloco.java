@@ -105,7 +105,7 @@ public abstract class Bloco {
 
   public static void calculateEstimateTotalInCarnaval(List<Bloco> blocos) {
     int sum = 0;
-    for (int i = 0; i < blocos.size() - 1; i++) {
+    for (int i = 0; i < blocos.size(); i++) {
       sum += blocos.get(i).calculateEstimetePublic();
     }
     System.out.println(
@@ -115,15 +115,41 @@ public abstract class Bloco {
 
   public static void listEstimatePublic(List<Bloco> blocos) {
     List<Bloco> ordered = sortBlockByPublic(blocos);
+    int index = 1;
     System.out.println(
-      "\nVeje a estatistica de públicos no blocos logo abaixo:"
+      "\nVeje a estatistica de públicos nos blocos logo abaixo:"
     );
     for (Bloco bloco : ordered) {
       System.out.println(
-        bloco.getName() + " - " + bloco.calculateEstimetePublic() + " pessoas"
+        index++ +
+        " - " +
+        bloco.getName() +
+        " - " +
+        bloco.calculateEstimetePublic() +
+        " pessoas"
       );
     }
     System.out.println();
+  }
+
+  public static void blockSchedule(List<Bloco> blocos) {
+    List<Bloco> ordered = sortBlockByPublic(blocos);
+    System.out.println("\nAgenda de Blocos de rua detalhadas: ");
+    for (Bloco bloco : ordered) {
+      System.out.println(
+        "Bloco: " +
+        bloco.getName() +
+        " |" +
+        " Data/Horário: " +
+        bloco.getDateHour().format(FORMATTER) +
+        " |" +
+        " Local: " +
+        bloco.getNeighborhood() +
+        " |" +
+        " Qtd. Est. de Foliões: " +
+        bloco.calculateEstimetePublic()
+      );
+    }
   }
 
   //0 <= x <= 6
