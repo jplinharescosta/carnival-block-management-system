@@ -1,18 +1,22 @@
-## Getting Started
+Por que criar determinadas classes?
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Bloco (Classe Abstrata) representa qualquer tipo de bloco de Carnaval.
+Ela foi criada para evitar repetições de código nas subclasses.
 
-## Folder Structure
+BlocoTradicional, BlocoTematico e BlocoInfantil cada um deles estende a classe Bloco e adiciona atributos específicos. Isso melhora a organização e permite diferenciar os blocos.
 
-The workspace contains two folders by default, where:
+Foliao representa um folião que pode indicar sua idade, estilo musical preferido e região de interesse. Essa classe foi criada para que o sistema possa recomendar blocos de forma personalizada.
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+Por que usar ou não herança?
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+Foi usado herança porque todos os blocos têm características em comum, como nome, horário e estimativa de público. Como Bloco é abstrata, forçamos as subclasses a implementar seus próprios detalhes específicos.
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+Se não tivéssemos usando herança, cada tipo de bloco precisaria repetir atributos e métodos, aumentando a complexidade e dificultando a manutenção do código.
 
-## Dependency Management
+Por que implementar determinado método em uma classe e não em outra?
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+recommendBlocks(List<Bloco> blocos) foi implementado em Foliao porque é o foliao que busca blocos compatíveis com seu gosto musical.
+
+sortBlockByPublic(List<Bloco> blocos) foi colocado na classe Bloco porque ele precisa comparar vários blocos e ordená-los pela estimativa de público.
+
+A verificação de conflito de horários foi feita em Bloco porque todos os blocos precisam dessa funcionalidade.
