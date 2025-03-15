@@ -1,62 +1,62 @@
+Here's a README template in English for your GitHub project:
+
+---
+
 # Carnival Block Management System
 
-The **Carnival Block Management System** is a Java-based application designed to manage carnival blocks, ensuring proper scheduling, avoiding time conflicts, and providing a better experience for event organizers and participants.
+This project is a **Carnival Block Management System** developed to manage and organize various carnival blocks, participants, schedules, and estimates. It was created as part of a college assignment, focusing on the management of carnival blocks in a Java-based system.
 
 ## Features
 
-- **Block Registration**: Add and manage carnival blocks with details such as name, location, and schedule.
-- **Participant Management**: Register revelers and associate them with their chosen carnival blocks.
-- **Conflict Detection**: Ensure no overlapping schedules among registered carnival blocks.
-- **Public Estimation**: Calculate the estimated number of attendees based on registrations.
-- **Recommendations**: Provide suggestions for better event planning.
-
-## Project Structure
-
-The project is structured as follows:
-
-- **src/**: Contains the application's source code.
-  - **models/**: Defines the core entities of the system, such as `Block` and `Participant`.
-  - **services/**: Implements the business logic, including conflict detection and public estimation.
-  - **main/**: The entry point of the application.
-- **README.md**: This file, providing an overview of the project.
-- **LICENSE**: Licensing information for the project.
+- **Block Registration**: Allows the creation and management of carnival blocks.
+- **Participant Management**: Register and manage participants (foliões).
+- **Schedule Conflict Detection**: Ensures no conflicting schedules for different blocks.
+- **Public Estimate**: Calculates an estimated number of people attending a carnival block.
+- **Recommendations**: Provides recommendations for managing the event more efficiently based on user input and data.
 
 ## Technologies Used
 
-- **Java**: The primary programming language used for development.
-- **OOP Principles**: Utilized for structured and maintainable code.
+- Java 8
+- Object-Oriented Programming (OOP)
+- JavaFX (Optional for GUI if implemented)
 
-## How to Run the Project
+## Project Structure
 
-1. **Clone the repository:**
+The project is organized into classes, each responsible for different functionalities. Below is an outline of the main components:
 
+- **Bloco Class**: Represents a carnival block and its properties.
+- **Participant Class**: Represents the participants (foliões) in a block.
+- **Schedule Management**: Manages the block scheduling and conflicts.
+- **Public Estimate**: Calculates the estimated attendance for each block.
+
+## How to Run
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/jplinharescosta/carnival-block-management-system.git
    ```
 
-2. **Navigate to the project directory:**
-
+2. Navigate to the project directory:
    ```bash
    cd carnival-block-management-system
    ```
 
-3. **Compile the source code:**
-
+3. Compile and run the Java program using your preferred IDE or from the command line:
    ```bash
-   javac -d bin src/*.java
+   javac *.java
+   java MainClass
    ```
 
-4. **Run the application:**
+## Usage
 
-   ```bash
-   java -cp bin Main
-   ```
+- To register a block, input the block name, time, and description.
+- To add a participant, enter their name and block.
+- The system will automatically check for schedule conflicts and calculate attendance estimates based on the given data.
 
-## Contributions
+## Contribution
 
-Contributions are welcome! Feel free to open issues or pull requests for improvements, bug fixes, or new features.
+Feel free to fork the repository and submit pull requests for any improvements or fixes you might have. If you find any issues, feel free to open an issue in the repository.
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
