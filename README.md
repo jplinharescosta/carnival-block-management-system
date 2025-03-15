@@ -1,62 +1,62 @@
-# Sistema de Gestão de Blocos Carnavalescos
+# Carnival Block Management System
 
-Este projeto foi desenvolvido em **Java** e tem como objetivo gerenciar blocos de Carnaval, permitindo a criação, organização e recomendação de blocos para os foliões.
+The **Carnival Block Management System** is a Java-based application designed to manage carnival blocks, ensuring proper scheduling, avoiding time conflicts, and providing a better experience for event organizers and participants.
 
-## Estrutura do Projeto
+## Features
 
-O projeto está organizado nas seguintes pastas e arquivos principais:
+- **Block Registration**: Add and manage carnival blocks with details such as name, location, and schedule.
+- **Participant Management**: Register revelers and associate them with their chosen carnival blocks.
+- **Conflict Detection**: Ensure no overlapping schedules among registered carnival blocks.
+- **Public Estimation**: Calculate the estimated number of attendees based on registrations.
+- **Recommendations**: Provide suggestions for better event planning.
 
-- `.vscode/`: Configurações específicas do Visual Studio Code.
-- `bin/`: Arquivos compilados.
-- `src/`: Código-fonte do projeto.
-- `.prettierrc.yaml`: Configurações de formatação de código.
-- `README.md`: Este arquivo de documentação.
+## Project Structure
 
-## Classes Principais
+The project is structured as follows:
 
-- **Bloco**: Classe abstrata que representa qualquer tipo de bloco de Carnaval. Inclui atributos comuns como nome, horário e estimativa de público.
-- **BlocoTradicional**, **BlocoTematico**, **BlocoInfantil**: Classes que estendem `Bloco`, adicionando atributos específicos para cada tipo de bloco.
-- **Foliao**: Representa um folião, contendo informações como idade, estilo musical preferido e região de interesse. Essa classe permite que o sistema recomende blocos de forma personalizada.
+- **src/**: Contains the application's source code.
+  - **models/**: Defines the core entities of the system, such as `Block` and `Participant`.
+  - **services/**: Implements the business logic, including conflict detection and public estimation.
+  - **main/**: The entry point of the application.
+- **README.md**: This file, providing an overview of the project.
+- **LICENSE**: Licensing information for the project.
 
-## Uso de Herança
+## Technologies Used
 
-A herança é utilizada para evitar repetição de código e melhorar a organização. A classe abstrata `Bloco` define atributos e métodos comuns a todos os blocos, enquanto as subclasses específicas adicionam detalhes particulares. Sem herança, cada tipo de bloco precisaria repetir atributos e métodos, aumentando a complexidade e dificultando a manutenção.
+- **Java**: The primary programming language used for development.
+- **OOP Principles**: Utilized for structured and maintainable code.
 
-## Implementação de Métodos
+## How to Run the Project
 
-Métodos são implementados nas classes onde fazem mais sentido. Por exemplo, métodos específicos de recomendação de blocos para foliões são implementados na classe `Foliao`, enquanto métodos gerais de gestão de blocos estão na classe `Bloco` ou suas subclasses.
-
-## Como Executar
-
-1. Clone o repositório:
+1. **Clone the repository:**
 
    ```bash
    git clone https://github.com/jplinharescosta/carnival-block-management-system.git
    ```
 
-2. Navegue até o diretório do projeto:
+2. **Navigate to the project directory:**
 
    ```bash
    cd carnival-block-management-system
    ```
 
-3. Compile o código:
+3. **Compile the source code:**
 
    ```bash
    javac -d bin src/*.java
    ```
 
-4. Execute o sistema:
+4. **Run the application:**
 
    ```bash
    java -cp bin Main
    ```
 
-## Contribuições
+## Contributions
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou pull requests com melhorias, correções de bugs ou novas funcionalidades.
+Contributions are welcome! Feel free to open issues or pull requests for improvements, bug fixes, or new features.
 
-## Licença
+## License
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+This project is licensed under the [MIT License](LICENSE).
 
